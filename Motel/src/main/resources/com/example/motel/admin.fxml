@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="940.0" style="-fx-background-color: #222a35;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motel.Admin">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="942.0" spacing="90.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Label alignment="CENTER" prefHeight="59.0" prefWidth="171.0" text="Motel" textFill="#f54b64">
+               <font>
+                  <Font name="DaMiOne" size="30.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label alignment="CENTER" prefHeight="59.0" prefWidth="310.0" text="Админ меню" textFill="#f54b64">
+               <font>
+                  <Font name="DaMiOne" size="30.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox fx:id="vbox" prefHeight="384.0" prefWidth="328.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="59.0" prefWidth="258.0" text="Гости:" textFill="#f54b64">
+               <font>
+                  <Font name="DaMiOne" size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="search" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Поиск" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+            <ScrollPane fx:id="scrollGuests" prefHeight="299.0" prefWidth="354.0" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="55.0" prefWidth="751.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#clickBack" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Назад">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox fx:id="hbox" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="803.0" spacing="30.0">
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#exportGuests" prefHeight="32.0" prefWidth="206.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Экспорт таблицы гости">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#exportDatabase" prefHeight="32.0" prefWidth="180.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Экспорт базы данных">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#printGuestTable" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Печать">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox alignment="TOP_RIGHT" prefHeight="384.0" prefWidth="329.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="258.0" text="Комнаты:" textFill="#f54b64">
+               <font>
+                  <Font name="DaMiOne" size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <ScrollPane fx:id="scrollRooms" prefHeight="299.0" prefWidth="354.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></VBox>
+   </right>
+   <center>
+      <FlowPane alignment="CENTER" hgap="300.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="246.0" prefWidth="283.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="258.0" text="Гости:" textFill="#f54b64">
+                     <font>
+                        <Font name="DaMiOne" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <TextField fx:id="loginText" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Логин" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                  <TextField fx:id="passText" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Пароль" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                  <TextField fx:id="mailText" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Почта" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                  <TextField fx:id="telText" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Телефон" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="263.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="add" mnemonicParsing="false" onAction="#clickAdd" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Добавить">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="change" mnemonicParsing="false" onAction="#clickChange" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Изменить">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="delete" mnemonicParsing="false" onAction="#clickDelete" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: #4e586e; -fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Удалить">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="147.0" prefWidth="283.0" spacing="20.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="258.0" text="Комнаты:" textFill="#f54b64">
+                     <font>
+                        <Font name="DaMiOne" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <TextField fx:id="roomNum" alignment="CENTER" prefHeight="27.0" prefWidth="260.0" promptText="Комната" style="-fx-border-color: #41313a; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>
